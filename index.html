@@ -153,7 +153,32 @@
 		//the querySelector selects which line to enter the dollar value in.
 		document.querySelector("#line-2").innerHTML = "$" + line_total.toFixed(2);
 
-		
+    //line 3
+        const line_3_quant = document.querySelector("#line-3-quantity").value;
+
+        const line_3_price = document.querySelector("#line-3-price").value;
+
+        line_total = line_3_quant * line_3_price;
+
+        sub_total = sub_total + line_total; 
+
+
+        //This element is the same as line 1 & 2 but with a different line selected. (ie, #line-3)
+        document.querySelector("#line-3").innerHTML = "$" + line_total.toFixed(2);
+
+
+    //line 4
+
+        const line_4_quant = document.querySelector("#line-4-quantity").value;
+
+        const line_4_price = document.querySelector("#line-4-price").value; 
+
+        line_total = line_4_quant * line_4_price; 
+
+        sub_total = sub_total + line_total; 
+
+        document.querySelector("#line-4").innerHTML = "$" + line_total.toFixed(2);
+
 
 
 	
