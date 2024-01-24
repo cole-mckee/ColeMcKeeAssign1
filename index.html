@@ -112,8 +112,50 @@
 
         let total = 0;
 
+    // line 1
 
-	    
+        // actually puts the quantity on the website by selecting where the value should go
+
+        const line_1_quant = document.querySelector("#line-1-quantity").value;
+
+
+        // puts the price on the website using the same method with a different variable
+
+        const line_1_price = document.querySelector("#line-1-price").value;
+
+        // calculates the line total by multiplying the quantity and the price, which are outlined as specific variables. 
+
+        line_total = line_1_quant * line_1_price;
+
+        // this posts the line total on the website similar to the price and the quantity values. 
+        //the dollar sign is a concatenation
+
+        document.querySelector("#line-1").innerHTML = "$" + line_total.toFixed(2)
+
+        // collects all the line totals and becomes a sub total
+
+        sub_total = sub_total + line_total;
+
+	//line 2
+
+		//these are repeats of the first line, but with different variables since we have a different line
+
+		const line_2_quant = document.querySelector("#line-2-quantity").value;
+
+		const line_2_price = document.querySelector("#line-2-price").value;
+
+		line_total = line_2_quant * line_2_price;
+
+		sub_total = sub_total + line_total; 
+
+
+		//the .toFixed element fixes the decimal places to 2 decimals
+		//the querySelector selects which line to enter the dollar value in.
+		document.querySelector("#line-2").innerHTML = "$" + line_total.toFixed(2);
+
+		
+
+
 	
             } 
     </script>
