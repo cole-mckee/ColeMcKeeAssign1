@@ -179,10 +179,66 @@
 
         document.querySelector("#line-4").innerHTML = "$" + line_total.toFixed(2);
 
+    //line 5 
+			
+
+		//by the time we get to the fifth line, the process is pretty much the same. 
+		const line_5_quant = document.querySelector("#line-5-quantity").value;
+
+        const line_5_price = document.querySelector("#line-5-price").value;
+
+        line_total = line_5_quant * line_5_price; 
+
+        sub_total = sub_total + line_total; 
+
+        document.querySelector("#line-5").innerHTML = "$" + line_total.toFixed(2);
 
 
-	
-            } 
+
+    //subtotal 
+
+        line_total = sub_total;
+
+        document.querySelector("#sub-total").innerHTML = "$" + line_total.toFixed(2); 
+
+
+
+    //Ternary operator for discount and tax
+        const discount_1 =  (sub_total >= 250) ? sub_total * 0.1 : 0;
+
+        document.querySelector("#discount").innerHTML = "$" + discount_1.toFixed(2);
+
+
+
+
+
+    //tax 
+
+        //tax rate const is at the top
+
+        //this sets the amount of tax that is displayed on the tax div
+        const tax_Amount = sub_total * tax_percent;
+
+        //this calls the tax_Amount to show up on the div
+        document.querySelector("#tax").innerHTML = "$" + tax_Amount.toFixed(2)
+
+
+    //Final total
+        //this calculates a final total by subracting the discount from the subtotal, then applying tax 
+        total = sub_total - discount_1 + tax_Amount; 
+
+        //this calls the final calculation to be solved and presented in the total div 
+        document.querySelector("#Total").innerHTML = "$" + total.toFixed(2);
+
+
+        //console.log("Hello world");
+
+      } 
+
+
+        calc_btn.addEventListener("click", calculate);
+
+
     </script>
 </body>
 </html>
