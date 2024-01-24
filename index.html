@@ -217,7 +217,7 @@
         //tax rate const is at the top
 
         //this sets the amount of tax that is displayed on the tax div
-        const tax_Amount = sub_total * tax_percent;
+        const tax_Amount = (sub_total - discount_1) * tax_percent;
 
         //this calls the tax_Amount to show up on the div
         document.querySelector("#tax").innerHTML = "$" + tax_Amount.toFixed(2)
